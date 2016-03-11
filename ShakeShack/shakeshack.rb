@@ -47,7 +47,7 @@ puts jarren_milkshake.price_of_milkshake
 class ShackShop
 	def initialize
 		@milkshakes = []
-		@checkout_milkshakes = checkout_milkshakes 
+		@milkshake_order_price = 0
 	end
 
 	def add_milkshakes(milkshake_order)
@@ -55,11 +55,15 @@ class ShackShop
 	end
 
 	def checkout
-		@checkout_milkshakes.each do |order| 
+    total_checkout = @milkshake_order_price
+		@milkshakes.each do |order| 
 		total_checkout += order.total_price_of_milkshake
+  end
+
+    total_checkout
 	end
 end
-end
+
 
 order1 = ShackShop.new
 order1.add_milkshakes(nizars_milkshake)
