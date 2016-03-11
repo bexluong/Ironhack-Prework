@@ -34,17 +34,35 @@ chocolate_chips = Ingredient.new("Chocolate Chips", 1)
 nizars_milkshake.add_ingredient(banana)
 nizars_milkshake.add_ingredient(chocolate_chips)
 
+jarren_milkshake = MilkShake.new
+blackberries = Ingredient.new("Blackberries", 2)
+raspberries = Ingredient.new("Raspberries", 2)
+jarren_milkshake.add_ingredient(blackberries)
+jarren_milkshake.add_ingredient(raspberries)
+
 puts nizars_milkshake.price_of_milkshake
-
-#class ShackShop
-	#def initialize
-		#@milkshakes = []
-		#@checkout_milkshakes = checkout_milkshakes 
+puts jarren_milkshake.price_of_milkshake
 
 
-#An empty list where we can add milkshakes
-#A method to add milkshakes to this list
-#A method to checkout all of the milkshakes in our list
-#Hint: Model this class in the same way we created the milkshake class,
-#and call the price_of_milkshake method to return a milkshakes total price when checking out.
+class ShackShop
+	def initialize
+		@milkshakes = []
+		@checkout_milkshakes = checkout_milkshakes 
+	end
 
+	def add_milkshakes(milkshake_order)
+		@milkshakes.push(milkshake_order)
+	end
+
+	def checkout
+		@checkout_milkshakes.each do |order| 
+		total_checkout += order.total_price_of_milkshake
+	end
+end
+end
+
+order1 = ShackShop.new
+order1.add_milkshakes(nizars_milkshake)
+order1.add_milkshakes(jarren_milkshake)
+
+puts order1.total_checkout
