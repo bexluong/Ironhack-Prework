@@ -48,3 +48,9 @@ class Fruit < Item
 	final_price = @price
   end
 end
+
+banana = Fruit.new("Banana", 10)
+orange_juice = Item.new("Orange Juice", 10)
+rice = Item.new("Rice", 1)
+vacuum_cleaner = Houseware.new("Vacumm Cleaner", 150)
+anchovies = Item.new("Anchovies", 2)

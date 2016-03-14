@@ -1,0 +1,92 @@
+.img-circle {
+    border-radius: 50%;
+}
+body{
+	font-family: Roboto, arial,sans-serif;
+	font-size: 90%;
+	color: gray;
+	font-weight: 100;
+}
+header {
+	float: right;
+	font-family: Roboto, arial,sans-serif;
+	font-size: 90%;
+	color: gray;
+	font-weight: 100;
+}
+
+a:link {
+	font-family: Roboto, arial,sans-serif;
+	font-size: 90%;
+	text-decoration: none;
+	}
+
+a:hover {
+	font-family: Roboto, arial,sans-serif;
+	font-size: 90%;
+	text-decoration: underline;
+}
+
+article {
+	margin-top: 150px; 
+	margin-right: auto;  
+	margin-left: 480px;
+	position: absolute;
+	}
+
+div {
+	text-align: center
+}
+
+#searchbar {
+	margin-left: auto;
+	margin-right: auto;
+	top: 300px;
+	position: relative;
+	width: 600px;
+	height: 40px;
+	border: 1px solid gray;
+	display:block;
+	clear: both;
+}
+
+#searchbutton {
+	margin-right: auto;
+	top: 340px;
+	position: relative;
+	width: 120px;
+	height: 40px;
+	background-color: #f1f1f1;
+	display:inline-block;
+	clear: both;	
+	text-align: center;
+	line-height: 40px;
+}
+
+#feelinglucky {
+	margin-left: auto;
+	margin-right: auto;
+	top: 340px;
+	position: relative;
+	width: 120px;
+	height: 40px;
+	background-color: #f1f1f1;
+	display:inline-block;
+	clear: both;	
+	text-align: center;
+	line-height: 40px;
+}
+
+footer {
+	background-color: #f1f1f1;
+	height: 40px;
+	position: relative;
+	top: 500px;
+	line-height: 40px;
+}
+
+#floatright {
+	float:right;
+}
+
+
