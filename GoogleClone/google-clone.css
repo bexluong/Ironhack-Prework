@@ -79,10 +79,10 @@ div {
 
 footer {
 	background-color: #f1f1f1;
-	height: 40px;
-	position: relative;
-	top: 500px;
 	line-height: 40px;
+	position:fixed;
+	width:100%;
+    bottom:0;
 }
 
 #floatright {
