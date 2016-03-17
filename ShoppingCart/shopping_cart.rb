@@ -8,7 +8,6 @@ By default, items will have no discount.
 Fruits have no discount during weekdays but on weekends they have a 10% discount.
 Housewares have no discount unless their unit price is more than 100€ / $100. 
 If the price is greater than 100€ / $100, there will be a 5% discount.
-
 =end
 
 class Item 
@@ -19,6 +18,7 @@ class Item
 
   def price
       #Your beautiful code goes here
+      total_item_price = @price
   end
 end
 
