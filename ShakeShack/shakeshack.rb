@@ -1,23 +1,29 @@
+require 'pry'
+
 class MilkShake
+attr_accessor :base_price, :ingredients
   def initialize
     @base_price = 3
     @ingredients = [ ]    
   end
 
+#creates an array of the ingridents
   def add_ingredient(ingredient)
     @ingredients.push(ingredient)
   end
   
+  # establish base price of milkshake
   def price_of_milkshake
-  #Let's establish what our counter should be before we start adding ingredients into the mix
-  total_price_of_milkshake = @base_price
-  #Add each ingredients price to our total
-  @ingredients.each do |ingredient|
+    total_price_of_milkshake = @base_price
+
+  #Add each ingredients price to our total taking from Ingredient class
+    @ingredients.each do |ingredient|
     total_price_of_milkshake += ingredient.price
   end
+
   #return  our total price to whoever called for it
    total_price_of_milkshake
-end
+  end
 end
 
 class Ingredient
@@ -28,45 +34,40 @@ class Ingredient
   end
 end
 
+class ShakeShop
+  def initialize
+    @order_price = 0
+    @milkshakes = [ ]
+  end
+
+  def add_milkshakes(order_name)
+    @milkshakes.push(order_name)
+  end
+
+  def checkout_milkshakes
+    total_checkout = @order_price
+    @milkshakes.each do |order|
+      total_checkout += order.price_of_milkshake
+    end
+    total_checkout
+  end
+end
+
 nizars_milkshake = MilkShake.new
 banana = Ingredient.new("Banana", 2)
 chocolate_chips = Ingredient.new("Chocolate Chips", 1)
 nizars_milkshake.add_ingredient(banana)
 nizars_milkshake.add_ingredient(chocolate_chips)
 
-jarren_milkshake = MilkShake.new
-blackberries = Ingredient.new("Blackberries", 2)
-raspberries = Ingredient.new("Raspberries", 2)
-jarren_milkshake.add_ingredient(blackberries)
-jarren_milkshake.add_ingredient(raspberries)
-
-puts nizars_milkshake.price_of_milkshake
-puts jarren_milkshake.price_of_milkshake
+jarrens_milkshake = MilkShake.new
+blueberry = Ingredient.new("Blueberry", 2)
+raspberry = Ingredient.new("Raspberry", 2)
+jarrens_milkshake.add_ingredient(blueberry)
+jarrens_milkshake.add_ingredient(raspberry)
 
 
-class ShackShop
-	def initialize
-		@milkshakes = []
-		@milkshake_order_price = 0
-	end
+order_one = ShakeShop.new
+order_one.add_milkshakes(jarrens_milkshake)
+order_one.add_milkshakes(nizars_milkshake)
+puts order_one.checkout_milkshakes
 
-	def add_milkshakes(milkshake_order)
-		@milkshakes.push(milkshake_order)
-	end
-
-	def checkout
-    total_checkout = @milkshake_order_price
-		@milkshakes.each do |order| 
-		total_checkout += order.total_price_of_milkshake
-  end
-
-    total_checkout
-	end
-end
-
-
-order1 = ShackShop.new
-order1.add_milkshakes(nizars_milkshake)
-order1.add_milkshakes(jarren_milkshake)
-
-puts order1.total_checkout
