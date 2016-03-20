@@ -21,7 +21,7 @@ attr_accessor :base_price, :ingredients
     total_price_of_milkshake += ingredient.price
   end
 
-  #return  our total price to whoever called for it
+  #return our total price to whoever called for it
    total_price_of_milkshake
   end
 end
