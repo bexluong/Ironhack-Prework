@@ -3,9 +3,6 @@ require 'pry'
 #first iteration
 =begin
 	
-rescue Exception => e
-	
-end
 def solve_cipher(input)
     return input.chars.map { |c| (c.ord-1).chr}
 end
